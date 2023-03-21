@@ -26,7 +26,11 @@ public class SnakeAndLadder {
                 	//Player behind by the number of positions received on the die
                     newposition = newposition - diceRoll;
             }
-
+         // Ensure that the player does not move beyond the winning position
+            if (newposition > winningposition) {
+                newposition = currentposition;
+                continue;
+            }
             // Update the current position
             currentposition=newposition;
             System.out.println("The Player is now at position "+currentposition);
